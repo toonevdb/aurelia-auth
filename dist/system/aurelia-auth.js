@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['./auth-service', './authentication', './authorize-step', './auth-fetch-config', './base-config', './auth-filter'], function (_export, _context) {
+System.register(['./auth-service', './authentication', './authorize-step', './auth-fetch-config', './base-config', './oAuth1', './oAuth2', './auth-filter'], function (_export, _context) {
   "use strict";
 
-  var AuthService, Authentication, AuthorizeStep, FetchConfig, BaseConfig, AuthFilterValueConverter;
+  var AuthService, Authentication, AuthorizeStep, FetchConfig, BaseConfig, OAuth1, OAuth2, AuthFilterValueConverter;
   function configure(aurelia, configCallback) {
     aurelia.globalResources('./auth-filter');
 
@@ -26,6 +26,10 @@ System.register(['./auth-service', './authentication', './authorize-step', './au
       FetchConfig = _authFetchConfig.FetchConfig;
     }, function (_baseConfig) {
       BaseConfig = _baseConfig.BaseConfig;
+    }, function (_oAuth) {
+      OAuth1 = _oAuth.OAuth1;
+    }, function (_oAuth2) {
+      OAuth2 = _oAuth2.OAuth2;
     }, function (_authFilter) {
       AuthFilterValueConverter = _authFilter.AuthFilterValueConverter;
     }],
@@ -41,6 +45,10 @@ System.register(['./auth-service', './authentication', './authorize-step', './au
       _export('BaseConfig', BaseConfig);
 
       _export('FetchConfig', FetchConfig);
+
+      _export('OAuth1', OAuth1);
+
+      _export('OAuth2', OAuth2);
     }
   };
 });

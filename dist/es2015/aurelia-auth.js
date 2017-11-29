@@ -3,6 +3,8 @@ import { Authentication } from './authentication';
 import { AuthorizeStep } from './authorize-step';
 import { FetchConfig } from './auth-fetch-config';
 import { BaseConfig } from './base-config';
+import { OAuth1 } from './oAuth1';
+import { OAuth2 } from './oAuth2';
 import { AuthFilterValueConverter } from './auth-filter';
 
 export function configure(aurelia, configCallback) {
@@ -14,4 +16,4 @@ export function configure(aurelia, configCallback) {
   }
 }
 
-export { Authentication, AuthFilterValueConverter, AuthService, AuthorizeStep, BaseConfig, FetchConfig };
+export { Authentication, AuthFilterValueConverter, AuthService, AuthorizeStep, BaseConfig, FetchConfig, OAuth1, OAuth2 };
