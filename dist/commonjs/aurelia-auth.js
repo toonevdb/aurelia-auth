@@ -3,10 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.FetchConfig = exports.BaseConfig = exports.AuthorizeStep = exports.AuthService = exports.AuthFilterValueConverter = undefined;
+exports.FetchConfig = exports.BaseConfig = exports.AuthorizeStep = exports.AuthService = exports.AuthFilterValueConverter = exports.Authentication = undefined;
 exports.configure = configure;
 
 var _authService = require('./auth-service');
+
+var _authentication = require('./authentication');
 
 var _authorizeStep = require('./authorize-step');
 
@@ -25,6 +27,7 @@ function configure(aurelia, configCallback) {
   }
 }
 
+exports.Authentication = _authentication.Authentication;
 exports.AuthFilterValueConverter = _authFilter.AuthFilterValueConverter;
 exports.AuthService = _authService.AuthService;
 exports.AuthorizeStep = _authorizeStep.AuthorizeStep;

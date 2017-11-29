@@ -738,6 +738,10 @@ export class OAuth1 {
 
     return this.http.fetch(exchangeForTokenUrl, {
       method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: json(data),
       credentials: credentials
     }).then(status);
@@ -760,12 +764,6 @@ export class FetchConfig {
   configure() {
     this.httpClient.configure(httpConfig => {
       httpConfig
-        .withDefaults({
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          }
-        })
         .withInterceptor(this.auth.tokenInterceptor);
     });
   }
@@ -899,6 +897,10 @@ export class OAuth2 {
 
     return this.http.fetch(exchangeForTokenUrl, {
       method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: json(data),
       credentials: credentials
     }).then(status);
@@ -984,6 +986,10 @@ export class AuthService {
 
     return this.http.fetch(signupUrl, {
       method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: json(content)
     })
       .then(status)
@@ -1059,6 +1065,10 @@ export class AuthService {
     } else if (this.config.unlinkMethod === 'post') {
       return this.http.fetch(unlinkUrl, {
         method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
         body: json(provider)
       }).then(status)
       .then(response => {

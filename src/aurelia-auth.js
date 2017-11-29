@@ -1,4 +1,5 @@
 import {AuthService} from './auth-service';
+import {Authentication} from './authentication';
 import {AuthorizeStep} from './authorize-step';
 import {FetchConfig} from './auth-fetch-config';
 import {BaseConfig} from './base-config';
@@ -14,6 +15,7 @@ export function configure(aurelia, configCallback) {
 }
 
 export {
+  Authentication,
   AuthFilterValueConverter,
   AuthService,
   AuthorizeStep,

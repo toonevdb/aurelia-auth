@@ -85,6 +85,10 @@ System.register(['aurelia-dependency-injection', 'aurelia-fetch-client', 'aureli
 
           return this.http.fetch(signupUrl, {
             method: 'post',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
             body: json(content)
           }).then(status).then(function (response) {
             if (_this.config.loginOnSignup) {
@@ -158,6 +162,10 @@ System.register(['aurelia-dependency-injection', 'aurelia-fetch-client', 'aureli
           } else if (this.config.unlinkMethod === 'post') {
             return this.http.fetch(unlinkUrl, {
               method: 'post',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
               body: json(provider)
             }).then(status).then(function (response) {
               _this5.eventAggregator.publish('auth:unlink', response);

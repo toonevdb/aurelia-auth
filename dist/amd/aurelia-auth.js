@@ -1,10 +1,10 @@
-define(['exports', './auth-service', './authorize-step', './auth-fetch-config', './base-config', './auth-filter'], function (exports, _authService, _authorizeStep, _authFetchConfig, _baseConfig, _authFilter) {
+define(['exports', './auth-service', './authentication', './authorize-step', './auth-fetch-config', './base-config', './auth-filter'], function (exports, _authService, _authentication, _authorizeStep, _authFetchConfig, _baseConfig, _authFilter) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.FetchConfig = exports.BaseConfig = exports.AuthorizeStep = exports.AuthService = exports.AuthFilterValueConverter = undefined;
+  exports.FetchConfig = exports.BaseConfig = exports.AuthorizeStep = exports.AuthService = exports.AuthFilterValueConverter = exports.Authentication = undefined;
   exports.configure = configure;
   function configure(aurelia, configCallback) {
     aurelia.globalResources('./auth-filter');
@@ -15,6 +15,7 @@ define(['exports', './auth-service', './authorize-step', './auth-fetch-config', 
     }
   }
 
+  exports.Authentication = _authentication.Authentication;
   exports.AuthFilterValueConverter = _authFilter.AuthFilterValueConverter;
   exports.AuthService = _authService.AuthService;
   exports.AuthorizeStep = _authorizeStep.AuthorizeStep;
