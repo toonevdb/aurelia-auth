@@ -16,8 +16,10 @@ var _baseConfig = require('./base-config');
 
 var _authFilter = require('./auth-filter');
 
+var {PLATFORM} = require('aurelia-pal');
+
 function configure(aurelia, configCallback) {
-  aurelia.globalResources('./auth-filter');
+  aurelia.globalResources(PLATFORM.moduleName('./auth-filter'));
 
   var baseConfig = aurelia.container.get(_baseConfig.BaseConfig);
   if (configCallback !== undefined && typeof configCallback === 'function') {
