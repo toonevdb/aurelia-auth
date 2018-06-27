@@ -780,6 +780,10 @@ var OAuth1 = exports.OAuth1 = (_dec4 = (0, _aureliaDependencyInjection.inject)(S
 
     return this.http.fetch(exchangeForTokenUrl, {
       method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: (0, _aureliaFetchClient.json)(data),
       credentials: credentials
     }).then(status);
@@ -807,12 +811,7 @@ var FetchConfig = exports.FetchConfig = (_dec5 = (0, _aureliaDependencyInjection
     var _this4 = this;
 
     this.httpClient.configure(function (httpConfig) {
-      httpConfig.withDefaults({
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-      }).withInterceptor(_this4.auth.tokenInterceptor);
+      httpConfig.withInterceptor(_this4.auth.tokenInterceptor);
     });
   };
 
@@ -955,6 +954,10 @@ var OAuth2 = exports.OAuth2 = (_dec7 = (0, _aureliaDependencyInjection.inject)(S
 
     return this.http.fetch(exchangeForTokenUrl, {
       method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: (0, _aureliaFetchClient.json)(data),
       credentials: credentials
     }).then(status);
@@ -1047,6 +1050,10 @@ var AuthService = exports.AuthService = (_dec8 = (0, _aureliaDependencyInjection
 
     return this.http.fetch(signupUrl, {
       method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: (0, _aureliaFetchClient.json)(content)
     }).then(status).then(function (response) {
       if (_this7.config.loginOnSignup) {
@@ -1120,6 +1127,10 @@ var AuthService = exports.AuthService = (_dec8 = (0, _aureliaDependencyInjection
     } else if (this.config.unlinkMethod === 'post') {
       return this.http.fetch(unlinkUrl, {
         method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
         body: (0, _aureliaFetchClient.json)(provider)
       }).then(status).then(function (response) {
         _this11.eventAggregator.publish('auth:unlink', response);

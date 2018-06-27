@@ -74,6 +74,10 @@ var AuthService = exports.AuthService = (_dec = (0, _aureliaDependencyInjection.
 
     return this.http.fetch(signupUrl, {
       method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: (0, _aureliaFetchClient.json)(content)
     }).then(_authUtilities.status).then(function (response) {
       if (_this.config.loginOnSignup) {
@@ -147,6 +151,10 @@ var AuthService = exports.AuthService = (_dec = (0, _aureliaDependencyInjection.
     } else if (this.config.unlinkMethod === 'post') {
       return this.http.fetch(unlinkUrl, {
         method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
         body: (0, _aureliaFetchClient.json)(provider)
       }).then(_authUtilities.status).then(function (response) {
         _this5.eventAggregator.publish('auth:unlink', response);
